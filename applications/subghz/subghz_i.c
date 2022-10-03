@@ -26,6 +26,10 @@ bool subghz_set_preset(SubGhz* subghz, const char* preset) {
         subghz->txrx->preset = FuriHalSubGhzPreset2FSKDev238Async;
     } else if(!strcmp(preset, "FuriHalSubGhzPreset2FSKDev476Async")) {
         subghz->txrx->preset = FuriHalSubGhzPreset2FSKDev476Async;
+    } else if(!strcmp(preset, "FuriHalSubGhzPreset2FSKDev3491Async")) {
+        subghz->txrx->preset = FuriHalSubGhzPreset2FSKDev3491Async;
+    } else if(!strcmp(preset, "FuriHalSubGhzPreset2FSKDev4760Async")) {
+        subghz->txrx->preset = FuriHalSubGhzPreset2FSKDev4760Async;
     } else {
         FURI_LOG_E(TAG, "Unknown preset");
         return false;
@@ -49,7 +53,10 @@ void subghz_get_frequency_modulation(SubGhz* subghz, string_t frequency, string_
             string_set(modulation, "AM");
         } else if(
             subghz->txrx->preset == FuriHalSubGhzPreset2FSKDev238Async ||
-            subghz->txrx->preset == FuriHalSubGhzPreset2FSKDev476Async) {
+            subghz->txrx->preset == FuriHalSubGhzPreset2FSKDev476Async ||
+            subghz->txrx->preset == FuriHalSubGhzPreset2FSKDev3491Async ||
+            subghz->txrx->preset == FuriHalSubGhzPreset2FSKDev4760Async
+            ) {
             string_set(modulation, "FM");
         } else {
             furi_crash(NULL);

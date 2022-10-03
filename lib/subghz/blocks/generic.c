@@ -20,6 +20,12 @@ bool subghz_block_generic_get_preset_name(FuriHalSubGhzPreset preset, string_t p
     case FuriHalSubGhzPreset2FSKDev476Async:
         preset_name = "FuriHalSubGhzPreset2FSKDev476Async";
         break;
+    case FuriHalSubGhzPreset2FSKDev3491Async:
+        preset_name = "FuriHalSubGhzPreset2FSKDev3491Async";
+        break;
+    case FuriHalSubGhzPreset2FSKDev4760Async:
+        preset_name = "FuriHalSubGhzPreset2FSKDev4760Async";
+        break;
     default:
         FURI_LOG_E(TAG, "Unknown preset");
         return false;
